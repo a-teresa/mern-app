@@ -21,6 +21,10 @@ const ProductScreen = () => {
                 <ListGroup.Item>
                     <h3 className='text-center'>{product.name}</h3>
                 </ListGroup.Item>
+                <ListGroup.Item className='text-center'>
+                    <Rating value={product.rating} text={`${product.numReviews}`}/>
+                </ListGroup.Item>
+                <ListGroup.Item className='text-center'>Price / kg: ${product.price}</ListGroup.Item>
             </ListGroup>
 
         </Col>
