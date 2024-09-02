@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import {Link} from 'react-router-dom'
 import Rating from '../components/Rating';
 import products from '../products';
-import { Row, Col, Image, ListGroup, Card, ListGroupItem} from 'react-bootstrap';
+import { Row, Col, Image, ListGroup, Card, ListGroupItem, Button} from 'react-bootstrap';
 
 const ProductScreen = () => {
     const { id : productId } = useParams();
@@ -38,7 +38,13 @@ const ProductScreen = () => {
                             </Col>
                         </Row>
                     </ListGroup.Item>
-
+                    <ListGroup.Item className='text-center'>
+                        <Button className = "btn-block w-48 mt-2" 
+                        type="button"
+                        disabled={product.countInStock===0}>
+                            Add to Cart
+                        </Button>
+                    </ListGroup.Item>
 
                 </ListGroup>
             </Card>
