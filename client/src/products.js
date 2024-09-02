@@ -5,9 +5,9 @@ const products = [
     image: '/images/carrots.png',
     description:
       'Satisfying crunch alongside a mildly sweet and earthy flavor.',
-    category: 'Electronics',
+    category: 'food',
     price: 0.99,
-    countInStock: 10,
+    countInStock: 100,
     rating: 4.5,
     numReviews: 12,
   },

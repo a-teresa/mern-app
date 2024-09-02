@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import {Link} from 'react-router-dom'
 import Rating from '../components/Rating';
 import products from '../products';
-import { Row, Col, Image, ListGroup, Card} from 'react-bootstrap';
+import { Row, Col, Image, ListGroup, Card, ListGroupItem} from 'react-bootstrap';
 
 const ProductScreen = () => {
     const { id : productId } = useParams();
@@ -11,7 +11,7 @@ const ProductScreen = () => {
 
   return (
     <div className="min-h-screen justify-center p-4">
-      <Link className="btn btn-outline mb-4 btn-primary">Go Back</Link>
+      <Link className="btn btn-outline mb-4 btn-primary" to="/">Go Back</Link>
      <Row >
         <Col md={5}>
         <Image className="center-block p-12 rounded mx-auto d-block;" style={{ width: '500px', height: '500px' } }src={product.image} alt={product.name} fluid/>
@@ -26,9 +26,22 @@ const ProductScreen = () => {
                 </ListGroup.Item>
                 <ListGroup.Item className='text-center'>Price / kg: ${product.price}</ListGroup.Item>
             </ListGroup>
-
         </Col>
-        <Col md={3}>
+        <Col md={3} className='mt-4'>
+            <Card>
+                <ListGroup variant='flush'>
+                    <ListGroup.Item>
+                        <Row>
+                            <Col className='text-center'>Stock:</Col>
+                            <Col className='text-center'>
+                                <strong>{product.countInStock >0 ? 'In Stock' : 'Out of Stock'} </strong>
+                            </Col>
+                        </Row>
+                    </ListGroup.Item>
+
+
+                </ListGroup>
+            </Card>
         </Col>
      </Row>
       
